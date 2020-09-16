@@ -6,6 +6,9 @@ The new OPS storage is slowly adding a full set of unit tests; however, much of
 code was developed by testing against these notebooks. Additionally, these
 notebooks can serve as usage examples.
 
+The new storage will add a new requirement to OPS: SQLAlchemy. Install with,
+e.g., `conda install -c conda-forge sqlalchemy`.
+
 ## Running the examples
 
 TODO
