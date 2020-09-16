@@ -16,6 +16,6 @@ install:
   - cd openpathsampling && git fetch && cd -
 
 script:
-  - git checkout origin/storage
-  - . test-schema.sh
-  - git checkout origin/storable_functions
+  - cd openpathsampling && git checkout origin/storage && cd -
+  - ./test-schema.sh
+  - cd openpathsampling && git checkout origin/storable_functions && cd -
