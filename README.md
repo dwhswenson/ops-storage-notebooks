@@ -6,6 +6,8 @@ The new OPS storage is slowly adding a full set of unit tests; however, much of
 code was developed by testing against these notebooks. Additionally, these
 notebooks can serve as usage examples.
 
+The notebooks are ordered from 
+
 The best way to run these as (smoke) tests is to install pytest and nbval,
 e.g., with conda:
 

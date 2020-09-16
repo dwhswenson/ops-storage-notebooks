@@ -10,6 +10,7 @@ before_install:
   - curl -OLk https://raw.githubusercontent.com/openpathsampling/openpathsampling/master/devtools/ci/miniconda_install.sh
   - curl -OLk https://raw.githubusercontent.com/openpathsampling/openpathsampling/master/devtools/conda_ops_dev_install.sh
   - bash miniconda_install.sh
+  - conda install -y -c conda-forge pytest pytest-cov nbval
 
 install:
   - bash conda_ops_dev_install.sh dwhswenson
