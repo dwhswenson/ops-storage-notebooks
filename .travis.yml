@@ -9,11 +9,11 @@ before_install:
   - export CONDA_PY="37"
   - curl -OLk https://raw.githubusercontent.com/openpathsampling/openpathsampling/master/devtools/ci/miniconda_install.sh
   - curl -OLk https://raw.githubusercontent.com/openpathsampling/openpathsampling/master/devtools/conda_ops_dev_install.sh
-  - bash miniconda_install.sh
+  - . miniconda_install.sh
 
 install:
-  - bash conda_ops_dev_install.sh dwhswenson
-  - conda install -y -c conda-forge pytest pytest-cov nbval
+  - conda install -y -c conda-forge pyyaml pytest pytest-cov nbval
+  - . conda_ops_dev_install.sh dwhswenson
   - cd openpathsampling && git fetch && cd -
 
 script:
