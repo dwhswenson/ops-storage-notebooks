@@ -1,0 +1,20 @@
+version: ~> 1.0
+language: python
+
+branches:
+  only:
+    - master
+
+before_install:
+  - curl -OLk https://raw.githubusercontent.com/openpathsampling/openpathsampling/master/devtools/ci/miniconda_install.sh
+  - curl -OLk https://github.com/openpathsampling/openpathsampling/blob/master/devtools/conda_ops_dev_install.sh
+  - bash miniconda_install.sh
+
+install:
+  - bash conda_ops_dev_install.sh dwhswenson
+  - cd openpathsampling && git fetch && cd -
+
+script:
+  - git checkout origin/storage
+  - . test-schema.sh
+  - git checkout origin/storable_functions
