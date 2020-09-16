@@ -7,6 +7,7 @@ branches:
 
 before_install:
   - export CONDA_PY="37"
+  - export DIR=`pwd`
   - curl -OLk https://raw.githubusercontent.com/openpathsampling/openpathsampling/master/devtools/ci/miniconda_install.sh
   - curl -OLk https://raw.githubusercontent.com/openpathsampling/openpathsampling/master/devtools/conda_ops_dev_install.sh
   - . miniconda_install.sh
@@ -14,7 +15,7 @@ before_install:
 install:
   - conda install -y -c conda-forge pyyaml pytest pytest-cov nbval
   - pushd ..
-  - . conda_ops_dev_install.sh dwhswenson
+  - . ${DIR}/conda_ops_dev_install.sh dwhswenson
   - pushd openpathsampling && git fetch && popd
   - popd
 
