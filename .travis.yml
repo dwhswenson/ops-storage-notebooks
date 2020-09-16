@@ -13,10 +13,12 @@ before_install:
 
 install:
   - conda install -y -c conda-forge pyyaml pytest pytest-cov nbval
+  - pushd ..
   - . conda_ops_dev_install.sh dwhswenson
-  - cd openpathsampling && git fetch && cd -
+  - pushd openpathsampling && git fetch && popd
+  - popd
 
 script:
-  - cd openpathsampling && git checkout origin/storage && cd -
+  - cd ../openpathsampling && git checkout origin/storage && cd -
   - ./test-schema.sh
-  - cd openpathsampling && git checkout origin/storable_functions && cd -
+  - cd ../openpathsampling && git checkout origin/storable_functions && cd -
