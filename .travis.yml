@@ -23,4 +23,5 @@ install:
 script:
   - cd ../openpathsampling && git checkout origin/storage && cd -
   - ./test-storage.sh
+  - ./test-examples.sh
   - cd ../openpathsampling && git checkout origin/storable_functions && cd -
