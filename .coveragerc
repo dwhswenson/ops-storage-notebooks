@@ -1,0 +1,8 @@
+[report]
+omit =
+    */test_*py
+    */belong_in_pr/*
+exclude_lines = 
+    pragma: no cover
+    def __repr__
+    raise NotImplementedError
