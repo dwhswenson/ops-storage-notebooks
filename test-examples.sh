@@ -1,4 +1,4 @@
-./.download-file.sh
+./download-file.sh
 
 py.test --nvbal-lax \
     examples/01_simple_usage.ipynb \

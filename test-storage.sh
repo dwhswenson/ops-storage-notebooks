@@ -1,6 +1,6 @@
 #!/bin/bash
 
-./.download-file.sh
+./download-file.sh
 
 py.test --pyargs openpathsampling.experimental.storage \
         --cov=openpathsampling.experimental.storage
