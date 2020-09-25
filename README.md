@@ -1,5 +1,8 @@
 # ops-storage-notebooks
 
+[![Build Status](https://travis-ci.com/dwhswenson/ops-storage-notebooks.svg?branch=master)](https://travis-ci.com/dwhswenson/ops-storage-notebooks)
+[![codecov](https://codecov.io/gh/dwhswenson/openpathsampling/branch/storage/graph/badge.svg)](https://codecov.io/gh/dwhswenson/openpathsampling)
+
 Jupyter notebooks for the new OpenPathSampling storage.
 
 The new OPS storage is slowly adding a full set of unit tests; however, much of
