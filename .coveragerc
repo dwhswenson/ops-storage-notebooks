@@ -1,4 +1,8 @@
+
 [report]
+include =
+    */openpathsampling/experimental/simstore/*
+    */openpathsampling/experimental/storage/*
 omit =
     */test_*py
     */belong_in_pr/*

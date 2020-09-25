@@ -2,8 +2,8 @@
 
 ./download-file.sh
 
-py.test --pyargs openpathsampling.experimental.storage \
-        --cov=openpathsampling.experimental.storage
+py.test --pyargs openpathsampling.experimental \
+        --cov=openpathsampling.experimental
 
 py.test --nbval-lax --cov=openpathsampling.experimental.storage --cov-append \
         tests/01_sql_play.ipynb \
