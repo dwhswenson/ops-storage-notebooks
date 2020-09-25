@@ -3,9 +3,11 @@
 ./download-file.sh
 
 py.test --pyargs openpathsampling.experimental \
-        --cov=openpathsampling.experimental
+        --cov=openpathsampling.experimental \
+        --cov-report=xml:unit.xml
 
-py.test --nbval-lax --cov=openpathsampling.experimental.storage --cov-append \
+py.test --nbval-lax --cov=openpathsampling.experimental \
+        --cov-report=xml:integration.xml \
         tests/01_sql_play.ipynb \
         tests/02_toy_serialization.ipynb \
         tests/03_toy_storage.ipynb \
