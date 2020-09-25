@@ -23,7 +23,7 @@ install:
 script:
   - cd ../openpathsampling && git checkout origin/storage && cd -
   - ./test-storage.sh
-  - bash <(curl -s https://codecov.io/bash) -f unit.xml
-  - bash <(curl -s https://codecov.io/bash) -f integration.xml 
+  - bash <(curl -s https://codecov.io/bash) -t $CODECOV_TOKEN -f unit.xml
+  - bash <(curl -s https://codecov.io/bash) -t $CODECOV_TOKEN -f integration.xml 
   - ./test-examples.sh
   - cd ../openpathsampling && git checkout origin/storable_functions && cd -
