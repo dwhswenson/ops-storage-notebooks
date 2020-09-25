@@ -25,9 +25,10 @@ script:
   - OPS_GIT=`python -c "import openpathsampling;
                         print(openpathsampling.version.git_hash)"`
   - ./test-storage.sh
-  - bash <(curl -s https://codecov.io/bash) -t $CODECOV_TOKEN -N $OPS_GIT \
-                                            -f unit.xml
-  - bash <(curl -s https://codecov.io/bash) -t $CODECOV_TOKEN -N $OPS_GIT \
-                                            -f integration.xml 
+  - bash <(curl -s https://codecov.io/bash) -f unit.xml \
+            -t $CODECOV_TOKEN -N $OPS_GIT -B storage -C $OPS_GIT
+  - bash <(curl -s https://codecov.io/bash) -f integration.xml \
+            -t $CODECOV_TOKEN -N $OPS_GIT -B storage -C $OPS_GIT
+  - ./test-examples.sh
   - ./test-examples.sh
   - cd ../openpathsampling && git checkout origin/storable_functions && cd -
