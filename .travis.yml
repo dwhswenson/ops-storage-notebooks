@@ -19,16 +19,16 @@ install:
   - . ${DIR}/conda_ops_dev_install.sh dwhswenson
   - pushd openpathsampling && git fetch && popd
   - popd
+  - pip install codecov
 
 script:
   - cd ../openpathsampling && git checkout origin/storage && cd -
-  - OPS_GIT=`python -c "import openpathsampling;
-                        print(openpathsampling.version.git_hash)"`
+  - OPS_GIT=`python -c "import openpathsampling; print(openpathsampling.version.git_hash)"`
+  - cd ../openpathsampling && ROOT=`pwd` && cd -
   - ./test-storage.sh
-  - bash <(curl -s https://codecov.io/bash) -f unit.xml \
-            -t $CODECOV_TOKEN -N $OPS_GIT -B storage -C $OPS_GIT
-  - bash <(curl -s https://codecov.io/bash) -f integration.xml \
-            -t $CODECOV_TOKEN -N $OPS_GIT -B storage -C $OPS_GIT
-  - ./test-examples.sh
+  - codecov -t $CODECOV_TOKEN --root $ROOT -c $OPS_GIT -b storage \
+            -f unit.xml
+  - codecov -t $CODECOV_TOKEN --root $ROOT -c $OPS_GIT -b storage \
+            -f integration.xml
   - ./test-examples.sh
   - cd ../openpathsampling && git checkout origin/storable_functions && cd -
