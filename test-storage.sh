@@ -14,4 +14,6 @@ py.test --nbval-lax --cov=openpathsampling.experimental \
         tests/04_registering_snapshots.ipynb \
         tests/05_toy_snapshot_deserialization.ipynb \
         tests/06_full_ops_schema.ipynb \
-        tests/07_storage_tables.ipynb
+        tests/07_storage_tables.ipynb \
+        tests/08_reloading.ipynb \
+        tests/09_storable_functions.ipynb
