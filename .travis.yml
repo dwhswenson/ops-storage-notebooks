@@ -25,7 +25,7 @@ script:
   - cd ../openpathsampling && git checkout origin/storable_functions && cd -
   - OPS_GIT=`python -c "import openpathsampling; print(openpathsampling.version.git_hash)"`
   - cd ../openpathsampling && ROOT=`pwd` && cd -
-  - ./test-storage.sh
+  - . ./test-storage.sh
   - codecov -t $CODECOV_TOKEN --root $ROOT -c $OPS_GIT -b storage -f unit.xml -F storage-unit
   - codecov -t $CODECOV_TOKEN --root $ROOT -c $OPS_GIT -b storage -f integration.xml -F storage-integration
-  - ./test-examples.sh
+  - . ./test-examples.sh
