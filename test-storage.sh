@@ -1,10 +1,12 @@
 #!/bin/bash
 
-./download-file.sh
+failure=0
+
+./download-file.sh || failure=1
 
 py.test --pyargs openpathsampling.experimental \
         --cov=openpathsampling.experimental \
-        --cov-report=xml:unit.xml
+        --cov-report=xml:unit.xml || failure=1
 
 py.test --nbval-lax --cov=openpathsampling.experimental \
         --cov-report=xml:integration.xml \
@@ -16,4 +18,9 @@ py.test --nbval-lax --cov=openpathsampling.experimental \
         tests/06_full_ops_schema.ipynb \
         tests/07_storage_tables.ipynb \
         tests/08_reloading.ipynb \
-        tests/09_storable_functions.ipynb
+        tests/09_storable_functions.ipynb \
+        || failure=1
+
+if [ $failure -eq 1 ]; then
+    exit 1
+fi
