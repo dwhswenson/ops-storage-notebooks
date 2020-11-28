@@ -31,7 +31,7 @@ jobs:
           conda install -y -c conda-forge pyyaml pytest pytest-cov nbval pip
           conda install -y -c conda-forge sqlalchemy
           pip install codecov
-          . ./conda_ops_dev_install.sh
+          CONDA_PY="3.7" source conda_ops_dev_install.sh
       - name: "Tests"
         run: |
           cd openpathsampling && ROOT=`pwd` && cd -
