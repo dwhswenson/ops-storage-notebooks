@@ -38,10 +38,10 @@ jobs:
       - name: "Versions"
         run: conda list
       - name: "Tests"
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
         run: |
-          cd openpathsampling && ROOT=`pwd` && cd -
-          which python
-          pwd
+          cd ../openpathsampling && ROOT=`pwd` && cd -
           OPS_GIT=`python -c "import openpathsampling; print(openpathsampling.version.git_hash)"`
           . ./test-storage.sh
           codecov -t $CODECOV_TOKEN --root $ROOT -c $OPS_GIT -b master -f unit.xml -F storage-unit
