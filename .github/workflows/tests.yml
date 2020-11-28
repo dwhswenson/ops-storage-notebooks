@@ -20,7 +20,7 @@ jobs:
     name: "OPS Master"
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-python@v2
+      #- uses: actions/setup-python@v2
       - uses: conda-incubator/setup-miniconda@v2
         with:
           auto-update-conda: true
@@ -40,6 +40,8 @@ jobs:
       - name: "Tests"
         run: |
           cd openpathsampling && ROOT=`pwd` && cd -
+          which python
+          pwd
           OPS_GIT=`python -c "import openpathsampling; print(openpathsampling.version.git_hash)"`
           . ./test-storage.sh
           codecov -t $CODECOV_TOKEN --root $ROOT -c $OPS_GIT -b master -f unit.xml -F storage-unit
