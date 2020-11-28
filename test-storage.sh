@@ -19,6 +19,7 @@ py.test --nbval-lax --cov=openpathsampling.experimental \
         tests/07_storage_tables.ipynb \
         tests/08_reloading.ipynb \
         tests/09_storable_functions.ipynb \
+        tests/10_result_typing.ipynb \
         || failure=1
 
 if [ $failure -eq 1 ]; then
