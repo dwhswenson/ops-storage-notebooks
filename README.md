@@ -1,6 +1,6 @@
 # ops-storage-notebooks
 
-[![Build Status](https://travis-ci.com/dwhswenson/ops-storage-notebooks.svg?branch=master)](https://travis-ci.com/dwhswenson/ops-storage-notebooks)
+[![Tests](https://github.com/dwhswenson/ops-storage-notebooks/actions/workflows/tests.yml/badge.svg)](https://github.com/dwhswenson/ops-storage-notebooks/actions/workflows/tests.yml)
 [![codecov](https://codecov.io/gh/dwhswenson/openpathsampling/branch/storage/graph/badge.svg)](https://codecov.io/gh/dwhswenson/openpathsampling)
 
 Jupyter notebooks for the new OpenPathSampling storage.
