@@ -35,6 +35,9 @@ jobs:
           pushd ..
           CONDA_PY="3.7" source ${DIR}/conda_ops_dev_install.sh
           popd
+          # for some reason, conda is currently pulling in (old) networkx 2.3 and
+          # matplotlib 3.4.1 (which is new, but not compatible)
+          conda update -y -c conda-forge networkx
       - name: "Versions"
         run: conda list
       - name: "Tests"
