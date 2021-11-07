@@ -40,8 +40,7 @@ jobs:
           # for some reason, conda is currently pulling in (old) networkx 2.3 and
           # matplotlib 3.4.1 (which is new, but not compatible)
           conda update -y -c conda-forge networkx
-          # it looks like we're getting errors on old pyparsing (before 3.0)
-          conda update -y -c conda-forge pyparsing>=3.0.4
+          # it looks like we're getting errors on new coverage
           conda install -y -c conda-forge "coverage<6.0"
       - name: "Versions"
         run: conda list
