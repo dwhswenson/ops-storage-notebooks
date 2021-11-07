@@ -42,7 +42,7 @@ jobs:
           conda update -y -c conda-forge networkx
           # it looks like we're getting errors on old pyparsing (before 3.0)
           conda update -y -c conda-forge pyparsing>=3.0.4
-          conda update -y -c conda-forge coverage<=6.0
+          conda update -y -c conda-forge "coverage<6.0"
       - name: "Versions"
         run: conda list
       - name: "Tests"
