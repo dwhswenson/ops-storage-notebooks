@@ -35,9 +35,13 @@ jobs:
           pushd ..
           CONDA_PY="3.7" source ${DIR}/conda_ops_dev_install.sh
           popd
+      - name: "Fixes"
+        run: |
           # for some reason, conda is currently pulling in (old) networkx 2.3 and
           # matplotlib 3.4.1 (which is new, but not compatible)
           conda update -y -c conda-forge networkx
+          # it looks like we're getting errors on old pyparsing (before 3.0)
+          conda update -y -c conda-forge pyparsing>=3.0.4
       - name: "Versions"
         run: conda list
       - name: "Tests"
