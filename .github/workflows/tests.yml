@@ -25,6 +25,7 @@ jobs:
         with:
           auto-update-conda: true
           python-version: 3.7
+          miniforge-variant: Mambaforge
       - name: "Installation"
         run: |
           curl -OLk https://raw.githubusercontent.com/openpathsampling/openpathsampling/master/devtools/conda_ops_dev_install.sh
