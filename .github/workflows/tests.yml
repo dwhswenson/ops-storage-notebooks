@@ -30,11 +30,11 @@ jobs:
         run: |
           curl -OLk https://raw.githubusercontent.com/openpathsampling/openpathsampling/master/devtools/conda_ops_dev_install.sh
           DIR=`pwd`
-          conda install -y -c conda-forge pyyaml pytest pytest-cov nbval pip
-          conda install -y -c conda-forge sqlalchemy
           python -m pip install codecov
           pushd ..
           CONDA_PY="3.7" source ${DIR}/conda_ops_dev_install.sh
+          mamba install -y -c conda-forge pyyaml pytest pytest-cov nbval pip
+          mamba install -y -c conda-forge sqlalchemy
           popd
       - name: "Fixes"
         run: |
