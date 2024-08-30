@@ -24,7 +24,7 @@ jobs:
       - uses: conda-incubator/setup-miniconda@v2
         with:
           auto-update-conda: true
-          python-version: 3.7
+          python-version: 3.10
           miniforge-variant: Mambaforge
       - name: "Installation"
         run: |
@@ -32,7 +32,7 @@ jobs:
           DIR=`pwd`
           python -m pip install codecov
           pushd ..
-          CONDA_PY="3.7" source ${DIR}/conda_ops_dev_install.sh
+          CONDA_PY="3.10" source ${DIR}/conda_ops_dev_install.sh
           mamba install -y -c conda-forge pyyaml pytest pytest-cov nbval pip
           mamba install -y -c conda-forge sqlalchemy
           popd
