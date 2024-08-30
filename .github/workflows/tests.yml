@@ -24,7 +24,7 @@ jobs:
       - uses: conda-incubator/setup-miniconda@v2
         with:
           auto-update-conda: true
-          python-version: 3.7
+          python-version: "3.11"
           miniforge-variant: Mambaforge
       - name: "Installation"
         run: |
@@ -32,7 +32,7 @@ jobs:
           DIR=`pwd`
           python -m pip install codecov
           pushd ..
-          CONDA_PY="3.7" source ${DIR}/conda_ops_dev_install.sh
+          CONDA_PY="3.11" source ${DIR}/conda_ops_dev_install.sh
           mamba install -y -c conda-forge pyyaml pytest pytest-cov nbval pip
           mamba install -y -c conda-forge sqlalchemy
           popd
@@ -41,8 +41,6 @@ jobs:
           # for some reason, conda is currently pulling in (old) networkx 2.3 and
           # matplotlib 3.4.1 (which is new, but not compatible)
           conda update -y -c conda-forge networkx
-          # it looks like we're getting errors on new coverage
-          conda install -y -c conda-forge "coverage<6.0"
       - name: "Versions"
         run: conda list
       - name: "Tests"
